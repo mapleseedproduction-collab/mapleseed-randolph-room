@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Room, 1.6 Miles from Randolph’s Main Gate</title>
+  <meta name="description" content="Furnished private room in Universal City, 1.6 miles from Randolph’s Lindsey Gate. Private bath, private kitchenette, and a sit-stand desk. TDY package $130 per night.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231c3344'/></svg>">
+  <style>
+    @font-face {
+      font-family: "Source Serif Pro";
+      src: url("SourceSerifPro-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Serif Pro";
+      src: url("SourceSerifPro-It.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Serif Pro";
+      src: url("SourceSerifPro-Semibold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Serif Pro";
+      src: url("SourceSerifPro-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("SourceSansPro-Light.ttf") format("truetype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("SourceSansPro-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("SourceSansPro-It.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("SourceSansPro-Semibold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans Pro";
+      src: url("SourceSansPro-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #f4efe6;
+      --bg-warm: #ebe3d6;
+      --paper: #fffdf8;
+      --ink: #1b1714;
+      --muted: #5c564e;
+      --line: #d8cec0;
+      --navy: #1c3344;
+      --navy-dark: #122432;
+      --copper: #8a5a32;
+      --cream: #f7f1e8;
+      --font-serif: "Source Serif Pro", Georgia, "Times New Roman", serif;
+      --font-sans: "Source Sans Pro", "Segoe UI", Tahoma, sans-serif;
+      --content: 70rem;
+      --radius: 0.75rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--navy); }
+    a:hover { color: var(--copper); }
+    a:focus-visible {
+      outline: 3px solid var(--copper);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -100px;
+      background: var(--navy);
+      color: #fff;
+      padding: 0.5rem 0.85rem;
+      z-index: 100;
+    }
+    .skip:focus { top: 0.75rem; }
+
+    .wrap {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    header.site {
+      background: var(--navy);
+      color: #f4efe6;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .site-inner {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 3.5rem;
+      padding: 0.6rem 0;
+    }
+    .brand {
+      color: #f4efe6;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+    }
+    .brand:hover { color: #fff; }
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #f4efe6;
+      color: var(--navy-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .header-phone:hover { background: #fff; color: var(--navy-dark); }
+
+    /* Hero: stacked on mobile, photo + copy side by side on desktop */
+    .hero-block {
+      background: var(--bg);
+    }
+    .hero-photo { background: #2a241c; }
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    .hero-copy {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+      padding: 1.75rem 0 0.5rem;
+    }
+    .hero-copy .phone-actions { display: none; }
+
+    /* Intro */
+    .intro {
+      padding: 0.6rem 0 1.5rem;
+    }
+    .kicker {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin: 0 0 0.7rem;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+      line-height: 1.22;
+      letter-spacing: -0.015em;
+      margin: 0 0 1.1rem;
+    }
+    .lede, .body-copy {
+      max-width: 42rem;
+      color: var(--ink);
+    }
+    .lede p, .body-copy p { margin: 0 0 1rem; }
+    .lede p:last-child, .body-copy p:last-child { margin-bottom: 0; }
+
+    /* Facts */
+    .facts {
+      padding: 0.5rem 0 2.25rem;
+    }
+    .facts h2, .gallery-head h2, .contact h2 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1.65rem;
+      margin: 0 0 1.1rem;
+    }
+    .fact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+    .fact {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.15rem 1.15rem;
+    }
+    .fact h3 {
+      font-family: var(--font-sans);
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+    }
+    .fact p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.5;
+    }
+
+    /* TDY package */
+    .tdy {
+      background: var(--navy);
+      color: #f4efe6;
+      padding: 2.4rem 0;
+    }
+    .tdy-inner {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+    }
+    .tdy h2 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      margin: 0 0 0.25rem;
+      color: #fff;
+    }
+    .tdy .price {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .tdy .price span {
+      font-size: 0.5em;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-left: 0.15em;
+    }
+    .tdy ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      max-width: 42rem;
+    }
+    .tdy li {
+      position: relative;
+      padding: 0.35rem 0 0.35rem 1.25rem;
+      font-size: 1.08rem;
+    }
+    .tdy li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      background: #d4a574;
+      border-radius: 1px;
+    }
+    .tdy .note {
+      margin: 1.1rem 0 0;
+      font-size: 0.98rem;
+      color: #d9d0c4;
+      max-width: 42rem;
+    }
+
+    /* Gallery */
+    .gallery-head { padding: 2.4rem 0 1rem; }
+    .gallery-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem 1.15rem;
+      padding: 0 0 2.5rem;
+    }
+    figure {
+      margin: 0;
+    }
+    figure img {
+      width: 100%;
+      border-radius: calc(var(--radius) - 2px);
+      background: var(--bg-warm);
+    }
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 0.5rem 0.15rem 0;
+      line-height: 1.4;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--bg-warm);
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid var(--line);
+    }
+    .contact p { max-width: 40rem; }
+    .phone-block {
+      margin: 1.25rem 0 1.4rem;
+    }
+    .phone-number {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1.15;
+    }
+    .phone-number:hover { color: var(--copper); }
+    .phone-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.8rem 1.25rem;
+      border-radius: 999px;
+      min-height: 3rem;
+      min-width: 9rem;
+    }
+    .btn-call {
+      background: var(--navy);
+      color: #f4efe6;
+    }
+    .btn-call:hover { background: var(--navy-dark); color: #fff; }
+    .btn-text {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-text:hover { background: var(--navy); color: #fff; }
+
+    footer.site {
+      background: var(--navy-dark);
+      color: #c9c0b4;
+      padding: 1.25rem 0;
+      font-size: 0.9rem;
+    }
+    footer.site .wrap { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: space-between; }
+    footer.site p { margin: 0; }
+
+    /* Mobile sticky call/text bar */
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .fact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .hero-block {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        align-items: center;
+        background: var(--bg);
+      }
+      .hero-photo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+      }
+      .hero-copy {
+        width: auto;
+        margin: 0;
+        padding: 2.25rem 2.75rem 2.25rem 2.35rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: none;
+      }
+      .hero-copy h1 { max-width: none; }
+      .hero-copy .lede { max-width: 28rem; }
+      .hero-copy .phone-actions { display: flex; margin-top: 1.15rem; }
+      .intro { padding-top: 1.75rem; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .fact-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      body { padding-bottom: 4.5rem; }
+      .header-phone { display: none; }
+      .brand { white-space: nowrap; }
+      .mobile-cta {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 30;
+        background: var(--navy-dark);
+        padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+        gap: 0.55rem;
+        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+      }
+      .mobile-cta .btn {
+        flex: 1;
+        min-width: 0;
+        padding: 0.75rem 0.5rem;
+        font-size: 1.02rem;
+      }
+      .mobile-cta .btn-call { background: #f4efe6; color: var(--navy-dark); }
+      .mobile-cta .btn-call:hover { background: #fff; color: var(--navy-dark); }
+      .mobile-cta .btn-text { border-color: #d9d0c4; color: #f4efe6; }
+      .mobile-cta .btn-text:hover { background: #1c3344; color: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site">
+    <div class="site-inner">
+      <a class="brand" href="#main">Private room near Randolph</a>
+      <a class="header-phone" href="tel:+19104947730">Call or text (910) 494-7730</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero-block">
+      <div class="hero-photo">
+        <img src="01-bedroom.jpg" width="1600" height="1067" alt="Furnished private bedroom with a wooden bed, a sit-stand desk by the window, a luggage rack, and a small table.">
+      </div>
+      <div class="hero-copy">
+        <p class="kicker">Universal City, near Lindsey Gate</p>
+        <h1>1.6 miles to Randolph’s&nbsp;main&nbsp;gate.<br>Private room, private bath,<br>private kitchenette.</h1>
+        <div class="lede">
+          <p>This is a furnished private bedroom in Universal City, 1.6 miles from the Lindsey Main Gate at JBSA-Randolph — about a 6-minute drive, and close enough to bike. The room has a private bath, a private kitchenette, a sit-stand desk, and high-speed Wi-Fi.</p>
+        </div>
+        <div class="phone-actions">
+          <a class="btn btn-call" href="tel:+19104947730">Call Shawn</a>
+          <a class="btn btn-text" href="sms:+19104947730">Text Shawn</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="wrap body-copy">
+        <p>The full kitchen is shared. So are the pool and fire pit. I live on site, which means a quiet professional household, a secure home, and a quick response if something needs fixing. I am bike-friendly, and bikes are stored inside the house. Laundry is on site.</p>
+        <p>This is meant for pilots, students, and other military members at Randolph on TDY.</p>
+      </div>
+    </section>
+
+    <section class="facts" id="details">
+      <div class="wrap">
+        <h2>What’s included</h2>
+        <div class="fact-grid">
+          <article class="fact">
+            <h3>Private room, bath, and kitchenette</h3>
+            <p>Private bedroom, plus a private bath and a private kitchenette.</p>
+          </article>
+          <article class="fact">
+            <h3>1.6 miles to Lindsey Gate</h3>
+            <p>About 6 minutes to Randolph’s Lindsey Main Gate. Close enough to bike; bikes are stored inside.</p>
+          </article>
+          <article class="fact">
+            <h3>Sit-stand desk and Wi-Fi</h3>
+            <p>A sit-stand desk and high-speed Wi-Fi, so you have a place to study between flights and classes.</p>
+          </article>
+          <article class="fact">
+            <h3>Bike to base</h3>
+            <p>Bike-friendly home. You can bike to Randolph, and bikes are kept inside.</p>
+          </article>
+          <article class="fact">
+            <h3>Shared kitchen, pool, and fire pit</h3>
+            <p>Shared full kitchen, plus a pool and fire pit. Laundry is on site.</p>
+          </article>
+          <article class="fact">
+            <h3>On-site owner</h3>
+            <p>A quiet professional household and a secure home, with someone always around if you need a hand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tdy" id="tdy">
+      <div class="tdy-inner">
+        <h2>TDY package</h2>
+        <p class="price">$130 <span>per night</span></p>
+        <ul>
+          <li>Cleaning twice a week and laundry service included.</li>
+          <li>Government travel card accepted.</li>
+          <li>Itemized receipts that match the payment.</li>
+          <li>This rate sits under the San Antonio lodging rate of $149 per night for FY2027.</li>
+        </ul>
+        <p class="note">A lower direct monthly price for non-TDY renters is available on request.</p>
+      </div>
+    </section>
+
+    <section class="gallery-head" id="photos">
+      <div class="wrap">
+        <h2>The room and the house</h2>
+        <p>The private bedroom, bath, kitchenette, and desk, then the shared spaces.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="gallery">
+        <figure>
+          <img src="01-bedroom.jpg" width="1600" height="1067" alt="Furnished private bedroom with a wooden bed, a sit-stand desk by the window, a luggage rack, and a small table.">
+          <figcaption>Private bedroom with a sit-stand desk</figcaption>
+        </figure>
+        <figure>
+          <img src="02-bedroom-tv.jpg" width="1600" height="1067" alt="The same private bedroom from the opposite corner, showing a wall-mounted television, a wooden dresser, and the bed.">
+          <figcaption>The room, with a TV and dresser</figcaption>
+        </figure>
+        <figure>
+          <img src="03-bedroom-alcove.jpg" width="1600" height="1067" alt="Private bedroom looking toward an open closet and a kitchenette alcove with a mini fridge.">
+          <figcaption>Closet and kitchenette just off the bedroom</figcaption>
+        </figure>
+        <figure>
+          <img src="04-bath.jpg" width="1600" height="1067" alt="Private bathroom with a wood accent wall, a double vanity, a skylight, and a tub-and-shower.">
+          <figcaption>Private bath — yours, never shared</figcaption>
+        </figure>
+        <figure>
+          <img src="05-kitchenette.jpg" width="1600" height="1067" alt="Private kitchenette alcove with a wood cabinet and a black mini fridge.">
+          <figcaption>Private kitchenette with a mini fridge</figcaption>
+        </figure>
+        <figure>
+          <img src="06-desk.jpg" width="1600" height="1067" alt="Sit-stand desk with a leather office chair, a task lamp, and a window beside it.">
+          <figcaption>Sit-stand desk for studying</figcaption>
+        </figure>
+        <figure>
+          <img src="07-closet.jpg" width="1600" height="1067" alt="Open closet with hanging space, shelves, a laundry basket, and a full-length mirror.">
+          <figcaption>Closet and storage</figcaption>
+        </figure>
+        <figure>
+          <img src="08-living.jpg" width="1600" height="1067" alt="Shared living and dining room with a wall of tall windows looking out to large oak trees, a leather sofa, and a dining table.">
+          <figcaption>Shared living and dining, looking out to the oaks</figcaption>
+        </figure>
+        <figure>
+          <img src="09-living-fireplace.jpg" width="1600" height="1067" alt="Shared living room with a fireplace, a dining table, a leather sofa, and French doors to the backyard.">
+          <figcaption>Shared living room with a fireplace</figcaption>
+        </figure>
+        <figure>
+          <img src="10-pool.jpg" width="1600" height="1067" alt="Kidney-shaped backyard pool shaded by large oak trees, with lounge chairs on the grass.">
+          <figcaption>Shared pool under the trees</figcaption>
+        </figure>
+        <figure>
+          <img src="11-firepit.jpg" width="1600" height="1067" alt="Backyard fire pit with lounge chairs under an oak tree, next to a covered patio.">
+          <figcaption>Fire pit and backyard patio</figcaption>
+        </figure>
+        <figure>
+          <img src="12-patio.jpg" width="1600" height="1067" alt="Covered patio with a ceiling fan, a high table, and chairs outside French doors.">
+          <figcaption>Covered patio</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Call or text Shawn</h2>
+        <p>If you are coming to Randolph for school, or you know someone who is, get in touch. I can answer questions about the room and the TDY package, and I can send itemized receipts.</p>
+        <div class="phone-block">
+          <a class="phone-number" href="tel:+19104947730">(910) 494-7730</a>
+          <div class="phone-actions">
+            <a class="btn btn-call" href="tel:+19104947730">Call Shawn</a>
+            <a class="btn btn-text" href="sms:+19104947730">Text Shawn</a>
+          </div>
+        </div>
+        <p>Universal City, Texas, near Randolph’s&nbsp;Lindsey&nbsp;Gate.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p>MapleSeed Properties</p>
+      <p>Universal City, near JBSA-Randolph</p>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Call or text">
+    <a class="btn btn-call" href="tel:+19104947730">Call (910) 494-7730</a>
+    <a class="btn btn-text" href="sms:+19104947730">Text Shawn</a>
+  </div>
+</body>
+</html>

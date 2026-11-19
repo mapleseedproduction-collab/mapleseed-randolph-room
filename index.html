@@ -218,7 +218,7 @@
     .facts {
       padding: 0.5rem 0 2.25rem;
     }
-    .facts h2, .gallery-head h2, .contact h2 {
+    .facts h2, .location h2, .gallery-head h2, .contact h2 {
       font-family: var(--font-serif);
       font-weight: 600;
       font-size: 1.65rem;
@@ -246,6 +246,17 @@
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.5;
+    }
+
+    /* Location */
+    .location {
+      padding: 0 0 2.4rem;
+    }
+    .location-map img {
+      width: 100%;
+      border-radius: calc(var(--radius) - 2px);
+      background: var(--bg-warm);
+      border: 1px solid var(--line);
     }
 
     /* TDY package */
@@ -526,6 +537,16 @@
             <p>A quiet professional household and a secure home, with someone always around if you need a hand.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="wrap">
+        <h2>Location</h2>
+        <figure class="location-map">
+          <img src="map-randolph.jpg" width="1115" height="925" alt="Map showing the drive from the house to Randolph’s main gate on Harmon Drive, about 6 minutes.">
+          <figcaption>About 6 minutes from the house to Randolph’s main gate on Harmon Drive.</figcaption>
+        </figure>
       </div>
     </section>
 
